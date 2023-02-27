@@ -1,0 +1,44 @@
+@use 'colors';
+
+@mixin container{
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+@mixin img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@mixin flexbox($justify, $align, $gap){
+    display: flex;
+    align-items: $align;
+
+    @if $justify != 'false'{
+        justify-content: $justify;
+    }
+    
+    @if $gap != 'false'{
+        gap: $gap;
+    }
+}
+
+@mixin button($padding){
+    display: inline-block;
+    border: none;
+    outline: none;
+    background-image: colors.$gradiant;
+    font-family: inherit;
+    color: colors.$white;
+    width: 11.25rem;
+    text-align: center;
+    text-decoration: none;
+    padding: $padding 0;
+    border-radius: 2.5rem;
+    font-weight: 700;
+    font-size: 0.9375rem;
+    cursor: pointer;
+}
